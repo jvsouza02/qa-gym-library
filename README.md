@@ -1,6 +1,7 @@
 # qa-gym-library
 
-Repositório didático para a disciplina de **Qualidade de Software** — IFRN Nova Cruz.
+Repositório didático para a disciplina de **Qualidade de Software** — IFRN
+Prof. Eliezio Soares
 
 O projeto simula um pequeno sistema de biblioteca acadêmica, com funcionalidades básicas já implementadas e várias lacunas intencionais para melhoria. O objetivo é praticar desenvolvimento colaborativo, testes automatizados, revisão de código e integração contínua.
 
