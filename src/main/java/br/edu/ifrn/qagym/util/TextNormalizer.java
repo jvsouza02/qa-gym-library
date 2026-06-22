@@ -10,7 +10,10 @@ public class TextNormalizer {
     }
 
     public boolean containsIgnoreCase(String text, String search) {
-        // TODO: implementar busca parcial ignorando maiúsculas/minúsculas
-        return false;
+        if (text == null || search == null) {
+            return false;
+        }
+        
+        return text.toLowerCase().contains(search.toLowerCase());
     }
 }

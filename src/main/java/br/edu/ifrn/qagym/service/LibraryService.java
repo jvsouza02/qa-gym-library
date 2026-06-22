@@ -2,6 +2,7 @@ package br.edu.ifrn.qagym.service;
 
 import br.edu.ifrn.qagym.model.Book;
 import br.edu.ifrn.qagym.model.User;
+import br.edu.ifrn.qagym.util.TextNormalizer;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -42,8 +43,10 @@ public class LibraryService {
 
     public List<Book> findBooksByTitle(String title) {
         List<Book> result = new ArrayList<>();
+        TextNormalizer normalizer = new TextNormalizer();
+
         for (Book book : books) {
-            if (book.getTitle().equals(title)) {
+            if (normalizer.containsIgnoreCase(book.getTitle(), title)) {
                 result.add(book);
             }
         }
