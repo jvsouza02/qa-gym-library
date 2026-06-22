@@ -112,4 +112,24 @@ class LibraryServiceTest {
         List<Book> all = service.getBooks("todos");
         assertThat(all).hasSize(1).contains(b1);
     }
+
+    @Test
+    void deveBuscarLivrosPorTituloParcialEIgnoreCase() {
+        Book book = new Book("ISBN-1", "O Senhor dos Anéis", "J.R.R. Tolkien", 1954);
+        service.addBook(book);
+
+        List<Book> found = service.findBooksByTitle("senhor");
+
+        assertThat(found).contains(book).hasSize(1);
+    }
+
+    @Test
+    void deveRetornarListaVaziaAoBuscarPorTituloParcialInexistente() {
+        Book book = new Book("ISBN-1", "Clean Code", "Robert C. Martin", 2008);
+        service.addBook(book);
+
+        List<Book> found = service.findBooksByTitle("Abacaxi");
+
+        assertThat(found).isEmpty();
+    }
 }
